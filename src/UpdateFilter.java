@@ -6,5 +6,6 @@ public enum UpdateFilter {
     ADDRESS,
     DATEOFBIRTH,
     COMPANY,
-    TITLE
+    TITLE,
+    BACK
 }

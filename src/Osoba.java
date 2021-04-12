@@ -6,6 +6,7 @@ public class Osoba {
     private String phoneNumber;
     private String email;
 
+    //konstrukor
     public Osoba(String firstName, String surname, String phoneNumber, String email) {
         this.firstName = firstName;
         this.surname = surname;
@@ -13,6 +14,7 @@ public class Osoba {
         this.email = email;
     }
 
+    //getteri i setteri
     public String getFirstName() {
         return firstName;
     }
@@ -45,6 +47,8 @@ public class Osoba {
         this.email = email;
     }
 
+
+    //odredivanje formata ispisa
     @Override
     public String toString() {
         return String.format("%s,%s,%s,%s", getFirstName(), getSurname(), getPhoneNumber(), getEmail());

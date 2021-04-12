@@ -4,6 +4,7 @@ import java.util.Scanner;
 public class Menu {
     private static Scanner sc = new Scanner(System.in);
 
+    //koristenjem enumeratora Action nakon ispisa odabiremo zeljenu radnju
     public static Action MainMenu() throws IOException {
         System.out.println("Molimo odaberite broj pored jedne od 4 opcije!");
         System.out.println("1. Unos novog kontakta");
@@ -30,6 +31,7 @@ public class Menu {
         return null;
     }
 
+    //koristenjem enumeratora SeacrhFilter nakon ispisa odabiremo zeljeni nacin pretrazivanja
     public static SearchFilter SearchMenu() throws IOException {
         System.out.println("Molimo odaberite broj pored jedne od 4 opcije!");
         System.out.println("1. Pretraživanje po imenu");
@@ -53,6 +55,7 @@ public class Menu {
         return null;
     }
 
+    //koristenjem enumeratora UpdateFilter nakon ispisa odabiremo koji atribut zelimo azurirati za privatne korisnike
     static UpdateFilter UpdateMenuPrivate() throws IOException {
         System.out.println("Molimo unesite broj pored jedne od ponuđenih opcija!");
         System.out.println("1. Promjena imena");
@@ -61,7 +64,7 @@ public class Menu {
         System.out.println("4. Promjena emaila");
         System.out.println("5. Promjena datuma rođenja");
         System.out.println("6. Promjena adrese");
-        System.out.println("7. Povratak u prethodni izbornik");
+        System.out.println("7. Povratak u glavni izbornik");
         String choice = sc.nextLine();
         switch (choice) {
             case "1":
@@ -77,13 +80,14 @@ public class Menu {
             case "6":
                 return UpdateFilter.ADDRESS;
             case "7":
-                SearchMenu();
-                break;
+                return UpdateFilter.BACK;
             default:
                 UpdateMenuPrivate();
         }
         return null;
     }
+
+    //koristenjem enumeratora UpdateFilter nakon ispisa odabiremo koji atribut zelimo azurirati za poslovne korisnike
     static UpdateFilter UpdateMenuPoslovni() throws IOException {
         System.out.println("Molimo unesite broj pored jedne od ponuđenih opcija!");
         System.out.println("1. Promjena imena");
@@ -92,7 +96,7 @@ public class Menu {
         System.out.println("4. Promjena emaila");
         System.out.println("5. Promjena titule");
         System.out.println("6. Promjena tvrtke:");
-        System.out.println("7. Povratak u prethodni izbornik:");
+        System.out.println("7. Povratak u glavni izbornik:");
         String choice = sc.nextLine();
         switch (choice) {
             case "1":
@@ -108,14 +112,14 @@ public class Menu {
             case "6":
                 return UpdateFilter.COMPANY;
             case "7":
-                SearchMenu();
-                break;
+                return UpdateFilter.BACK;
             default:
                 UpdateMenuPoslovni();
         }
         return null;
     }
 
+    ////koristenjem enumeratora AddFilter nakon ispisa odabiremo koji tip korisnika zelimo dodati
     static AddFilter AddMenu() throws IOException {
         System.out.println("Molimo odaberite broj pored jedne od 3 opcije!");
         System.out.println("1. Dodavanje privatnog kontakta");

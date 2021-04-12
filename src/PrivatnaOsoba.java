@@ -7,12 +7,14 @@ public class PrivatnaOsoba extends Osoba{
     private String address;
     private String dateOfBirth;
 
+    //konstrukor
     public PrivatnaOsoba(String firstName, String surname, String phoneNumber, String email, String address, String dateOfBirth) {
         super(firstName, surname, phoneNumber, email);
         this.address = address;
         this.dateOfBirth = dateOfBirth;
     }
 
+    //getteri i setteri
     public String getAddress() {
         return address;
     }
@@ -43,6 +45,8 @@ public class PrivatnaOsoba extends Osoba{
         }
         return null;
     }
+
+    //odredivanje formata ispisa
     @Override
     public String toString() {
         return String.format("%s,%s,%s", super.toString(), getAddress(), getDateOfBirth());
